@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App</title>
+    <style>
+
+        .container{
+
+            display: flex;
+
+        }
+
+        .btn-container{
+
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .btn{
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        .btn-red{
+            background-color: red;
+        }
+
+        .btn-orange{
+            background-color: orange;
+        }
+
+        .btn-yellow{
+            background-color: yellow;
+        }
+
+        .btn-green{
+            background-color: green;
+        }
+
+        .btn-blue{
+            background-color: blue;
+        }
+
+        .btn-purple{
+            background-color: purple;
+        }
+
+        .btn-pink{
+            background-color: palevioletred;
+        }
+
+        .btn-brown{
+            background-color: brown;
+        }
+
+        .btn-grey{
+            background-color: grey;
+        }
+
+        .btn-black{
+            background-color: black;
+        }
+
+        .toolbar-bottom{
+            width: 750px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .shapes{
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .btn-circle{
+            border:2px solid;
+            border-radius: 50px;
+        }
+
+        .btn-square{
+            border: 2px solid;
+        }
+        
+
+        .btn-clear{
+            padding:5px 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Welcome to the Drawing App!</h1>
+<div class= "container">
+
+    <div class= "btn-container">
+
+        <button class= "btn btn-red" type="button"></button>
+        <button class= "btn btn-orange" type="button"></button>
+        <button class= "btn btn-yellow" type="button"></button>
+        <button class= "btn btn-green" type="button"></button>
+        <button class= "btn btn-blue" type="button"></button>
+        <button class= "btn btn-purple" type="button"></button>
+        <button class= "btn btn-pink" type="button"></button>
+        <button class= "btn btn-brown" type="button"></button>
+        <button class= "btn btn-grey" type="button"></button>
+        <button class= "btn btn-black" type="button"></button>
+    
+    </div>
+
+    <canvas id="myCanvas" width="700" height="500" style="border:4px solid  lime;
+     display: block;"/>
+
+</div>
+
+<div class="toolbar-bottom">
+    <div class="shapes">
+        <button class= "btn btn-circle" type="button"></button>
+        <button class= "btn btn-square" type="button"></button>
+    </div>
+    
+    <div class="actions">
+        <button class= "btn-clear" type="button">Clear</button>
+    </div>
+</div>
+
+</body>
+</html>
