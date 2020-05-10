@@ -130,6 +130,25 @@
         <button class= "btn-clear" type="button">Clear</button>
     </div>
 </div>
+<script>
+    var c = document.getElementById("myCanvas");
+    c.addEventListener("click", function(evt){
+        const{x,y}=getMousePos(c,evt);
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(x,y,100,0,2*Math.PI);
+        ctx.stroke();
+    });
+    
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+            };
+    }
 
+
+</script>
 </body>
 </html>
