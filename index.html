@@ -132,14 +132,29 @@
 </div>
 <script>
     var c = document.getElementById("myCanvas");
-    c.addEventListener("click", function(evt){
+    //c.addEventListener("click",(evt)=> drawCircle(evt))
+
+    c.addEventListener("click",(evt)=> drawSquare(evt))
+
+    function drawCircle(evt){
         const{x,y}=getMousePos(c,evt);
         var ctx = c.getContext("2d");
         ctx.beginPath();
         ctx.arc(x,y,100,0,2*Math.PI);
         ctx.stroke();
-    });
-    
+    }
+
+    function drawSquare(evt){
+        const{x,y}=getMousePos(c,evt);
+        var ctx = c.getContext("2d");
+        ctx.moveTo(x,y);
+        ctx.lineTo(x+100,y);
+        ctx.lineTo(x+100,y+100);
+        ctx.lineTo(x,y+100);
+        ctx.lineTo(x,y);
+        ctx.stroke();
+    }
+
     function getMousePos(canvas, evt) {
         var rect = canvas.getBoundingClientRect();
         return {
