@@ -48,9 +48,10 @@
     var c = document.getElementById("myCanvas");
     var circleBtn = document.getElementsByClassName("btn-circle")[0];
     var squareBtn = document.getElementsByClassName("btn-square")[0];
+    var clearBtn = document.getElementsByClassName("btn-clear")[0];
     var shapeToDraw = ""; 
     //c.addEventListener("click",(evt)=> drawCircle(evt))
-console.log(circleBtn)
+
     c.addEventListener("click",(evt)=>{ 
         if (shapeToDraw === "circle"){
             drawCircle(evt);
@@ -82,6 +83,8 @@ console.log(circleBtn)
         };
         
         });
+
+        clearBtn.addEventListener("click",()=>window.location.reload());
 
     function drawCircle(evt){
         const{x,y}=getMousePos(c,evt);
