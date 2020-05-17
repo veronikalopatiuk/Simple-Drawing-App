@@ -64,6 +64,7 @@ console.log(circleBtn)
     circleBtn.addEventListener("click",()=>{ 
         if (shapeToDraw !== "circle"){
         shapeToDraw = "circle";
+        squareBtn.classList.remove("chosenShape");
         circleBtn.classList.add("chosenShape");
         } else {
             circleBtn.classList.remove("chosenShape");
@@ -74,6 +75,7 @@ console.log(circleBtn)
         if (shapeToDraw !== "square"){
         shapeToDraw = "square";
         squareBtn.classList.add("chosenShape");
+        circleBtn.classList.remove("chosenShape");
         } else {
             squareBtn.classList.remove("chosenShape");
             shapeToDraw = "";
