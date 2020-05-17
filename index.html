@@ -87,6 +87,9 @@
             border: 2px solid;
         }
         
+        .chosenShape{
+            border:4px solid fuchsia;
+        }
 
         .btn-clear{
             padding:5px 15px;
@@ -132,9 +135,40 @@
 </div>
 <script>
     var c = document.getElementById("myCanvas");
+    var circleBtn = document.getElementsByClassName("btn-circle");
+    var squareBtn = document.getElementsByClassName("btn-square");
+    var shapeToDraw = ""; 
     //c.addEventListener("click",(evt)=> drawCircle(evt))
+console.log(circleBtn)
+    c.addEventListener("click",(evt)=>{ 
+        if (shapeToDraw === "circle"){
+            drawCircle(evt);
+        } else if (shapeToDraw === "square"){
+            drawSquare(evt);
+        } else {
+            alert("Choose a shape to draw with!")
+        }
+        });
 
-    c.addEventListener("click",(evt)=> drawSquare(evt))
+    circleBtn[0].addEventListener("click",()=>{ 
+        if (shapeToDraw !== "circle"){
+        shapeToDraw = "circle";
+        circleBtn[0].classList.add("chosenShape");
+        } else {
+            circleBtn[0].classList.remove("chosenShape");
+            shapeToDraw = "";
+        };
+        });
+    squareBtn[0].addEventListener("click",()=>{ 
+        if (shapeToDraw !== "square"){
+        shapeToDraw = "square";
+        squareBtn[0].classList.add("chosenShape");
+        } else {
+            squareBtn[0].classList.remove("chosenShape");
+            shapeToDraw = "";
+        };
+        
+        });
 
     function drawCircle(evt){
         const{x,y}=getMousePos(c,evt);
