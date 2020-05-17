@@ -4,98 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drawing App</title>
-    <style>
 
-        .container{
+    <link rel="stylesheet" href="style.css">
 
-            display: flex;
-
-        }
-
-        .btn-container{
-
-            width: 50px;
-            display: flex;
-            flex-direction: column;
-            
-        }
-
-        .btn{
-            width: 30px;
-            height: 30px;
-            margin-bottom: 5px;
-        }
-
-        .btn-red{
-            background-color: red;
-        }
-
-        .btn-orange{
-            background-color: orange;
-        }
-
-        .btn-yellow{
-            background-color: yellow;
-        }
-
-        .btn-green{
-            background-color: green;
-        }
-
-        .btn-blue{
-            background-color: blue;
-        }
-
-        .btn-purple{
-            background-color: purple;
-        }
-
-        .btn-pink{
-            background-color: palevioletred;
-        }
-
-        .btn-brown{
-            background-color: brown;
-        }
-
-        .btn-grey{
-            background-color: grey;
-        }
-
-        .btn-black{
-            background-color: black;
-        }
-
-        .toolbar-bottom{
-            width: 750px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .shapes{
-            margin-left: 50px;
-            margin-top: 10px;
-        }
-
-        .btn-circle{
-            border:2px solid;
-            border-radius: 50px;
-        }
-
-        .btn-square{
-            border: 2px solid;
-        }
-        
-        .chosenShape{
-            border:4px solid fuchsia;
-        }
-
-        .btn-clear{
-            padding:5px 15px;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -135,8 +46,8 @@
 </div>
 <script>
     var c = document.getElementById("myCanvas");
-    var circleBtn = document.getElementsByClassName("btn-circle");
-    var squareBtn = document.getElementsByClassName("btn-square");
+    var circleBtn = document.getElementsByClassName("btn-circle")[0];
+    var squareBtn = document.getElementsByClassName("btn-square")[0];
     var shapeToDraw = ""; 
     //c.addEventListener("click",(evt)=> drawCircle(evt))
 console.log(circleBtn)
@@ -150,21 +61,21 @@ console.log(circleBtn)
         }
         });
 
-    circleBtn[0].addEventListener("click",()=>{ 
+    circleBtn.addEventListener("click",()=>{ 
         if (shapeToDraw !== "circle"){
         shapeToDraw = "circle";
-        circleBtn[0].classList.add("chosenShape");
+        circleBtn.classList.add("chosenShape");
         } else {
-            circleBtn[0].classList.remove("chosenShape");
+            circleBtn.classList.remove("chosenShape");
             shapeToDraw = "";
         };
         });
-    squareBtn[0].addEventListener("click",()=>{ 
+    squareBtn.addEventListener("click",()=>{ 
         if (shapeToDraw !== "square"){
         shapeToDraw = "square";
-        squareBtn[0].classList.add("chosenShape");
+        squareBtn.classList.add("chosenShape");
         } else {
-            squareBtn[0].classList.remove("chosenShape");
+            squareBtn.classList.remove("chosenShape");
             shapeToDraw = "";
         };
         
