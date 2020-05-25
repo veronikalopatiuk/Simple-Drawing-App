@@ -45,12 +45,65 @@
     </div>
 </div>
 <script>
+    var shapeColor = "black";
     var c = document.getElementById("myCanvas");
     var circleBtn = document.getElementsByClassName("btn-circle")[0];
     var squareBtn = document.getElementsByClassName("btn-square")[0];
+    
     var clearBtn = document.getElementsByClassName("btn-clear")[0];
     var shapeToDraw = ""; 
-    //c.addEventListener("click",(evt)=> drawCircle(evt))
+    
+    var redBtn = document.getElementsByClassName("btn-red")[0];
+    var orangeBtn = document.getElementsByClassName("btn-orange")[0];
+    var yellowBtn = document.getElementsByClassName("btn-yellow")[0];
+    var greenBtn = document.getElementsByClassName("btn-green")[0];
+    var blueBtn = document.getElementsByClassName("btn-blue")[0];
+    var purpleBtn = document.getElementsByClassName("btn-purple")[0];
+    var pinkBtn = document.getElementsByClassName("btn-pink")[0];
+    var brownBtn = document.getElementsByClassName("btn-brown")[0];
+    var greyBtn = document.getElementsByClassName("btn-grey")[0];
+    var blackBtn = document.getElementsByClassName("btn-black")[0];
+
+
+    redBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    orangeBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    yellowBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    greenBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    blueBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    purpleBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    pinkBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    brownBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    greyBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
+
+    blackBtn.addEventListener("click",(evt)=> {
+        shapeColor = getComputedStyle(evt.target).backgroundColor
+    });
 
     c.addEventListener("click",(evt)=>{ 
         if (shapeToDraw === "circle"){
@@ -62,33 +115,25 @@
         }
         });
 
-    circleBtn.addEventListener("click",()=>{ 
-        if (shapeToDraw !== "circle"){
+    circleBtn.addEventListener("click", () => { 
         shapeToDraw = "circle";
-        squareBtn.classList.remove("chosenShape");
         circleBtn.classList.add("chosenShape");
-        } else {
-            circleBtn.classList.remove("chosenShape");
-            shapeToDraw = "";
-        };
-        });
-    squareBtn.addEventListener("click",()=>{ 
-        if (shapeToDraw !== "square"){
+        squareBtn.classList.remove("chosenShape");        
+    });
+
+    squareBtn.addEventListener("click", () => { 
         shapeToDraw = "square";
         squareBtn.classList.add("chosenShape");
-        circleBtn.classList.remove("chosenShape");
-        } else {
-            squareBtn.classList.remove("chosenShape");
-            shapeToDraw = "";
-        };
+        circleBtn.classList.remove("chosenShape");       
         
-        });
+    });
 
-        clearBtn.addEventListener("click",()=>window.location.reload());
+    clearBtn.addEventListener("click", () => window.location.reload());
 
     function drawCircle(evt){
         const{x,y}=getMousePos(c,evt);
         var ctx = c.getContext("2d");
+        ctx.strokeStyle = shapeColor;
         ctx.beginPath();
         ctx.arc(x,y,100,0,2*Math.PI);
         ctx.stroke();
@@ -97,6 +142,8 @@
     function drawSquare(evt){
         const{x,y}=getMousePos(c,evt);
         var ctx = c.getContext("2d");
+        ctx.strokeStyle = shapeColor;
+        ctx.beginPath();
         ctx.moveTo(x,y);
         ctx.lineTo(x+100,y);
         ctx.lineTo(x+100,y+100);
